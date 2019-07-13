@@ -20,7 +20,7 @@ api = Api(
     blueprint,
     title="datalaunch server api",
     version=API_VERSION,
-    description="The datalaunch server backend api, which allows management of runs",
+    description="The datalaunch server run_backend api, which allows management of runs",
     doc=swagger_doc_path,
 )
 

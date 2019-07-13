@@ -11,5 +11,5 @@ class Code(Resource):
         return {
             "status": "happy",
             "num_active_threads": threading.active_count(),
-            "active_threads": [str(t) for t in threading.enumerate()],
+            "active_threads": [f"{t.name} ({t.ident})" for t in threading.enumerate()],
         }

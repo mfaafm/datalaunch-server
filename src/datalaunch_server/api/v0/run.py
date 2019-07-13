@@ -39,7 +39,10 @@ class Run(Resource):
     def get(self, run_id):
         """ Get information about a run """
         run = run_backend.get_run(run_id)
-        return serialize_datetime(run)
+        if run is not None:
+            return serialize_datetime(run)
+        else:
+            return {"error": f"Cannot find run for run_id {run_id}!"}, 404
 
     def put(self, run_id):
         """ Terminate an ongoing run """

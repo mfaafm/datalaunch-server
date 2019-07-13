@@ -6,6 +6,7 @@ from .run import api as run_namespace
 from .runs import api as runs_namespace
 from .logs import api as logs_namespace
 from .code import api as code_namespace
+from .status import api as status_namespace
 
 
 API_VERSION = "0"
@@ -20,7 +21,7 @@ api = Api(
     blueprint,
     title="datalaunch server api",
     version=API_VERSION,
-    description="The datalaunch server run_backend api, which allows management of runs",
+    description="datalaunch server api, which allows management of workspace and runs",
     doc=swagger_doc_path,
 )
 
@@ -29,3 +30,4 @@ api.add_namespace(run_namespace)
 api.add_namespace(runs_namespace)
 api.add_namespace(logs_namespace)
 api.add_namespace(code_namespace)
+api.add_namespace(status_namespace)

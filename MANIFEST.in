@@ -1,0 +1,11 @@
+graft src
+
+include setup.py
+include README.md
+include LICENSE
+include MANIFEST.in
+
+# Include files for versioneer
+include versioneer.py
+
+include src/datalaunch_server/_version.py

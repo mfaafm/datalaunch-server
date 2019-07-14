@@ -8,6 +8,7 @@ class RunBackend(object):
     def __init__(self, workspace):
         self.workspace = workspace
         self.db = workspace.db
+        self.storage = workspace.storage
 
     def create_run(self, specification):
         run_id = str(uuid.uuid4())
@@ -42,6 +43,8 @@ class RunBackend(object):
     def delete_run(self, run_id):
         self.terminate_run(run_id)
         self.db.delete_run(run_id)
+        self.storage.delete_logs(run_id)
+        self.storage.delete_code(run_id)
 
     def get_run(self, run_id):
         return self.db.get_run(run_id)

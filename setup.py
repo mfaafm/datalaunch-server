@@ -27,5 +27,11 @@ setup(
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     python_requires=">=3",
-    install_requires=["flask-restplus>=0.12.1", "flask", "werkzeug", "pymongo>=3.7.2"],
+    install_requires=[
+        "flask-restplus>=0.12.1",
+        "pymongo>=3.7.2",
+        "docker>=4.0.0",
+        "flask",
+        "werkzeug",
+    ],
 )
